@@ -3,455 +3,255 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111a18">
-  <meta name="description" content="Filet de merluza para tu mesa o tu negocio. Consultá por venta minorista y mayorista por WhatsApp.">
-  <title>Pesquera Sergio | Filet para todos los días</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --ink: #eef2ec;
-      --muted: #a1b0a8;
-      --paper: #111a18;
-      --white: #1b2723;
-      --sea: #91c9a9;
-      --sea-dark: #0b1411;
-      --lime: #dce99c;
-      --line: #2e3b35;
-      --serif: Georgia, "Times New Roman", serif;
-      --sans: "Segoe UI", Arial, sans-serif;
-    }
+  <meta name="theme-color" content="#041b2d">
+  <meta name="description" content="Pesquera Sergio: pescados y productos del mar para venta minorista y mayorista. Consultas directas por WhatsApp.">
+  <title>Pesquera Sergio | Productos del mar</title>
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--paper);
-      font-family: var(--sans);
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; }
-    button, input, select, textarea { font: inherit; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    .shell { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
-
-    .announcement {
-      padding: 10px 16px;
-      color: #f4f3e9;
-      background: var(--sea-dark);
-      text-align: center;
-      font-size: 12px;
-      letter-spacing: .09em;
-    }
-    .announcement span { color: var(--lime); }
-    .header { position: relative; z-index: 2; background: var(--paper); }
-    .nav {
-      min-height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      border-bottom: 1px solid var(--line);
-    }
-    .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
-    .brand-mark {
-      width: 37px;
-      height: 37px;
-      display: grid;
-      place-items: center;
-      color: var(--white);
-      background: var(--sea);
-      border-radius: 50% 50% 46% 46%;
-    }
-    .brand-mark svg { width: 23px; height: 23px; }
-    .brand-name { font: 20px var(--serif); letter-spacing: -.03em; }
-    .nav-links { display: flex; align-items: center; gap: 30px; }
-    .nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; }
-    .nav-links a:hover { color: var(--sea); }
-    .button {
-      min-height: 46px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 0 19px;
-      color: var(--white);
-      background: var(--sea);
-      border: 1px solid var(--sea);
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 650;
-      transition: background .2s, transform .2s;
-      cursor: pointer;
-    }
-    .button:hover { background: var(--sea-dark); transform: translateY(-1px); }
-    .button svg { width: 17px; height: 17px; }
-    .button-light { color: var(--ink); background: var(--white); border-color: #d5dbd1; }
-    .button-light:hover { background: #25322c; }
-    .nav .button { min-height: 41px; padding-inline: 15px; }
-
-    .hero { padding: 35px 0 78px; }
-    .hero-card {
-      min-height: 494px;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      background: var(--sea-dark);
-      border-radius: 5px;
-      isolation: isolate;
-    }
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(13, 43, 42, .91) 0%, rgba(13, 43, 42, .76) 43%, rgba(13, 43, 42, .12) 100%);
-    }
-    .hero-photo {
-      position: absolute;
-      z-index: -2;
-      inset: 0 0 0 33%;
-      width: 67%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 52%;
-    }
-    .hero-copy { width: min(590px, 65%); padding: 62px 0 62px 7%; color: white; }
-    .eyebrow {
-      margin: 0 0 18px;
-      color: var(--lime);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .17em;
-      text-transform: uppercase;
-    }
-    h1, h2, h3, p { margin-top: 0; }
-    .hero h1 { margin-bottom: 19px; font: clamp(45px, 6vw, 73px)/.99 var(--serif); letter-spacing: -.045em; }
-    .hero h1 em { color: var(--lime); font-weight: 400; }
-    .hero-description { max-width: 420px; margin-bottom: 27px; color: #e2e8df; font-size: 15px; line-height: 1.8; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; }
-    .hero .button { color: #182119; background: var(--lime); border-color: var(--lime); }
-    .hero .button:hover { background: #e5f2aa; }
-    .hero .button-outline { color: white; background: transparent; border-color: rgba(255,255,255,.54); }
-    .hero .button-outline:hover { background: rgba(255,255,255,.1); }
-    .hero-note { margin: 18px 0 0; color: rgba(255,255,255,.75); font-size: 11px; }
-
-    .intro { padding-bottom: 69px; text-align: center; }
-    .intro .eyebrow { margin-bottom: 11px; color: #b6cf9b; }
-    .intro h2, .section-heading h2, .contact-copy h2 { margin-bottom: 12px; font: clamp(34px, 4vw, 47px)/1.1 var(--serif); letter-spacing: -.035em; }
-    .intro p:last-child { margin: 0 auto; color: var(--muted); font-size: 14px; line-height: 1.8; }
-
-    .products-section { padding: 69px 0 83px; background: #17211d; }
-    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
-    .section-heading .eyebrow { margin-bottom: 10px; color: #b6cf9b; }
-    .section-heading h2 { margin-bottom: 0; }
-    .section-heading > p { max-width: 310px; margin: 0 0 4px; color: var(--muted); font-size: 13px; line-height: 1.7; }
-    .product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 21px; }
-    .product-card { min-width: 0; overflow: hidden; background: var(--white); border: 1px solid #2b3832; border-radius: 4px; }
-    .product-image-wrap { position: relative; aspect-ratio: 1.23 / 1; overflow: hidden; background: #26332d; }
-    .product-image { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
-    .product-card:hover .product-image { transform: scale(1.035); }
-    .product-tag {
-      position: absolute;
-      top: 13px;
-      left: 13px;
-      padding: 7px 10px;
-      color: var(--sea-dark);
-      background: var(--lime);
-      border-radius: 2px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
-    .product-info { padding: 19px 19px 20px; }
-    .product-info h3 { margin-bottom: 8px; font: 24px/1.2 var(--serif); }
-    .product-info p { min-height: 43px; margin-bottom: 17px; color: var(--muted); font-size: 12px; line-height: 1.75; }
-    .product-link { display: inline-flex; align-items: center; gap: 7px; color: var(--sea); text-decoration: none; font-size: 12px; font-weight: 700; }
-    .product-link:hover { text-decoration: underline; }
-    .product-link svg { width: 14px; height: 14px; }
-
-    .promise { padding: 74px 0; }
-    .promise-heading { max-width: 520px; margin: 0 auto 37px; text-align: center; }
-    .promise-heading .eyebrow { margin-bottom: 10px; color: #b6cf9b; }
-    .promise-heading h2 { margin-bottom: 0; font: clamp(34px, 4vw, 44px)/1.12 var(--serif); letter-spacing: -.035em; }
-    .promise-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); }
-    .promise-item { padding: 27px 26px; }
-    .promise-item + .promise-item { border-left: 1px solid var(--line); }
-    .promise-icon { width: 37px; height: 37px; display: grid; place-items: center; margin-bottom: 16px; color: var(--lime); background: #29382f; border-radius: 50%; }
-    .promise-icon svg { width: 19px; height: 19px; }
-    .promise-item h3 { margin-bottom: 8px; font: 20px var(--serif); }
-    .promise-item p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
-
-    .contact { padding: 0 0 78px; }
-    .contact-card { position: relative; overflow: hidden; padding: 49px; color: white; background: #20483e; border-radius: 4px; }
-    .contact-card::after { content: "✳"; position: absolute; top: -85px; right: 40px; color: rgba(255,255,255,.07); font-size: 300px; line-height: 1; pointer-events: none; }
-    .contact-copy { position: relative; z-index: 1; max-width: 600px; }
-    .contact-copy .eyebrow { margin-bottom: 11px; }
-    .contact-copy h2 { margin-bottom: 12px; }
-    .contact-copy p:not(.eyebrow) { max-width: 430px; margin-bottom: 22px; color: #dce9dc; font-size: 13px; line-height: 1.75; }
-    .contact-card .button { color: #182119; background: var(--lime); border-color: var(--lime); }
-    .contact-card .button:hover { background: #e5f2aa; }
-
-    .footer { padding: 25px 0; border-top: 1px solid var(--line); }
-    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
-    .footer .brand-name { font-size: 17px; }
-    .footer-note { margin: 0; color: var(--muted); font-size: 11px; }
-    .whatsapp-float {
-      position: fixed;
-      z-index: 5;
-      right: 23px;
-      bottom: 22px;
-      width: 55px;
-      height: 55px;
-      display: grid;
-      place-items: center;
-      color: white;
-      background: #168b52;
-      border-radius: 50%;
-      box-shadow: 0 5px 20px rgba(12, 54, 37, .26);
-      transition: transform .2s;
-    }
-    .whatsapp-float:hover { transform: translateY(-3px); }
-    .whatsapp-float svg { width: 26px; height: 26px; }
-
-
-    @media (max-width: 760px) {
-      .shell { width: min(100% - 34px, 600px); }
-      .announcement { font-size: 10px; }
-      .nav { min-height: 70px; }
-      .nav-links { gap: 18px; }
-      .nav-links a:first-child { display: none; }
-      .nav .button { padding-inline: 11px; font-size: 11px; }
-      .hero { padding: 20px 0 58px; }
-      .hero-card { min-height: 520px; align-items: end; }
-      .hero-card::before { background: linear-gradient(0deg, rgba(13,43,42,.96) 0%, rgba(13,43,42,.78) 48%, rgba(13,43,42,.18) 100%); }
-      .hero-photo { inset: 0; width: 100%; height: 100%; object-position: center 38%; }
-      .hero-copy { width: 100%; padding: 180px 26px 32px; }
-      .hero h1 { font-size: clamp(45px, 12vw, 64px); }
-      .hero-description { font-size: 13px; }
-      .intro { padding-bottom: 53px; }
-      .products-section { padding: 55px 0 62px; }
-      .section-heading { display: block; }
-      .section-heading > p { margin-top: 13px; }
-      .product-grid { grid-template-columns: 1fr; gap: 14px; }
-      .product-card { display: grid; grid-template-columns: 39% 1fr; }
-      .product-image-wrap { min-height: 100%; aspect-ratio: auto; }
-      .product-info { padding: 14px; }
-      .product-info h3 { font-size: 20px; }
-      .product-info p { min-height: 0; margin-bottom: 13px; }
-      .promise { padding: 56px 0; }
-      .promise-grid { grid-template-columns: 1fr; }
-      .promise-item { padding: 20px; }
-      .promise-item + .promise-item { border-top: 1px solid var(--line); border-left: 0; }
-      .promise-icon { float: left; margin: 0 14px 28px 0; }
-      .contact { padding-bottom: 55px; }
-      .contact-card { padding: 31px 24px; }
-      .footer-inner { flex-wrap: wrap; }
-      .footer-note { order: 3; width: 100%; }
-    }
-    @media (max-width: 390px) {
-      .brand-name { font-size: 17px; }
-      .nav-links { gap: 10px; }
-      .nav .button { min-height: 38px; font-size: 10px; }
-      .shell { width: calc(100% - 28px); }
-      .product-card { grid-template-columns: 35% 1fr; }
-      .product-info { padding: 12px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
-    }
-  </style>
+  <!-- Carga rápida de la hoja de estilos principal. -->
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <div class="announcement">VENTA MINORISTA Y MAYORISTA <span>·</span> Consultas directas por WhatsApp</div>
-  <header class="header">
-    <div class="shell nav">
-      <a class="brand" href="#" aria-label="Pesquera Sergio, inicio">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M4 14c2.2-4.3 5.4-6.5 9.5-6.5 2.2 0 4.3.8 6.5 2.5-2.2 4.3-5.4 6.5-9.5 6.5-2.2 0-4.3-.8-6.5-2.5Z" stroke="currentColor" stroke-width="1.5"/><path d="m4 14-2 3 5-.7M13 10.5h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <!-- ============================================================
+       1. BARRA SUPERIOR
+       ============================================================ -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>VENTA MINORISTA Y MAYORISTA</span>
+      <span class="topbar-dot" aria-hidden="true">•</span>
+      <span>CONSULTAS DIRECTAS POR WHATSAPP</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       2. CABECERA / NAVEGACIÓN
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Pesquera Sergio, inicio">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none">
+            <path d="M8 24c5.4-8.6 12.4-12.5 21-12.5 5 0 9.2 1.7 13 5.1-3.1 8.5-10 14.2-19.8 14.2-5.1 0-9.8-2.2-14.2-6.8Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+            <path d="M8 24 2.5 30.5l8.8-1.3M30 20.5h.01" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15 39c5.5-2.8 12-3.4 19.4-1.8M12 34.5c7-3.3 14.8-3.8 22.7-1.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
         </span>
-        <span class="brand-name">Pesquera Sergio</span>
+        <span class="brand-text">Pesquera<br>Sergio</span>
       </a>
-      <nav class="nav-links" aria-label="Navegación principal">
-        <a href="#productos">Nuestros productos</a>
+
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="desktop-menu" aria-label="Navegación principal">
+        <a href="#productos">Productos</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#contacto">Contacto</a>
+        <a class="nav-whatsapp" data-whatsapp-link href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
       </nav>
-      <a class="button" href="https://wa.me/5492236174870?text=Hola%2C%20quiero%20consultar%20por%20filet%20de%20merluza." target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11.6a8 8 0 0 1-11.8 7l-4.2 1.1 1.1-4.1A8 8 0 1 1 20 11.6Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 8.5c.2-.5.5-.5.8-.5h.4c.2 0 .3.1.4.4l.6 1.5c.1.2.1.4-.1.6l-.5.6c-.2.2-.2.4 0 .6.5.8 1.2 1.5 2 1.9.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.5.7c.2.1.3.2.3.4 0 .3-.1 1-.5 1.3-.4.4-1 .6-1.6.6s-1.8-.4-3.1-1.5c-1.5-1.3-2.5-3.1-2.6-3.8-.1-.7 0-1.3.5-1.8Z" fill="currentColor"/></svg>
-        Escribinos
-      </a>
     </div>
+
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Navegación móvil">
+      <a href="#productos">Productos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+      <a class="mobile-whatsapp" data-whatsapp-link href="#" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp</a>
+    </nav>
   </header>
 
-  <main>
+  <main id="inicio">
+    <!-- ============================================================
+         3. HERO / PORTADA
+         ============================================================ -->
     <section class="hero">
-      <div class="shell">
-        <div class="hero-card">
-          <img class="hero-photo" src="WhatsApp%20Image%202026-10-01%20at%2016.05.09.jpeg" alt="Filet de merluza listo para preparar" fetchpriority="high">
+      <div class="container">
+        <div class="hero-shell">
           <div class="hero-copy">
             <p class="eyebrow">Del mar a tu mesa</p>
-            <h1>Buen filet,<br><em>sin vueltas.</em></h1>
-            <p class="hero-description">Filet de merluza para disfrutar en casa o sumar a tu negocio. Comprá por menor o consultá por ventas mayoristas.</p>
+            <h1>Buen filet,<br><span>sin vueltas.</span></h1>
+            <p class="hero-text">
+              Productos del mar para tu casa o tu negocio. Consultá por
+              disponibilidad, formatos y venta mayorista.
+            </p>
+
             <div class="hero-actions">
-              <a class="button" href="https://wa.me/5492236174870?text=Hola%2C%20quiero%20hacer%20una%20consulta%20por%20filet%20de%20merluza." target="_blank" rel="noopener noreferrer">
+              <a class="primary-button" data-whatsapp-link href="#" target="_blank" rel="noopener noreferrer">
                 Consultar por WhatsApp
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </a>
-              <a class="button button-outline" href="#productos">Ver productos</a>
+              <a class="secondary-button" href="#productos">Ver productos</a>
             </div>
+
             <p class="hero-note">Atención directa · Minorista y mayorista</p>
           </div>
+
+          <div class="hero-visual">
+            <div class="hero-glow"></div>
+            <img
+              class="hero-image"
+              src="WhatsApp%20Image%202026-10-01%20at%2016.05.09.jpeg"
+              alt="Filet de merluza listo para preparar"
+              fetchpriority="high"
+              decoding="async">
+            <div class="hero-badge">
+              <span class="hero-badge-icon" aria-hidden="true">✦</span>
+              <span>
+                <strong>Productos frescos</strong>
+                <small>Consultá disponibilidad</small>
+              </span>
+            </div>
+          </div>
+
+          <div class="hero-wave" aria-hidden="true"></div>
         </div>
       </div>
     </section>
 
+    <!-- ============================================================
+         4. INTRODUCCIÓN
+         ============================================================ -->
     <section class="intro" id="nosotros">
-      <div class="shell">
+      <div class="container intro-inner">
         <p class="eyebrow">Una buena elección</p>
         <h2>Productos del mar para cada ocasión</h2>
-        <p>Filet y pescado entero, con opciones para disfrutar en casa o abastecer tu negocio.<br>Venta minorista y mayorista. Consultanos por disponibilidad.</p>
+        <p>
+          Filet, pescado entero y otras opciones para disfrutar en casa o
+          abastecer tu negocio. Venta minorista y mayorista.
+        </p>
       </div>
     </section>
 
+    <!-- ============================================================
+         5. CATÁLOGO DE PRODUCTOS
+         Los productos se mantienen en productos.js.
+         ============================================================ -->
     <section class="products-section" id="productos">
-      <div class="shell">
+      <div class="container">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Lo que ofrecemos</p>
-            <h2>Elegí cómo comprar</h2>
+            <p class="eyebrow">Nuestro catálogo</p>
+            <h2>Elegí tu producto</h2>
           </div>
-          <p>Contanos qué necesitás y te orientamos sobre formatos y disponibilidad. Sin compromiso.</p>
+          <p>Consultá por presentación, disponibilidad y precio.</p>
         </div>
+
         <div class="product-grid" id="product-grid" aria-live="polite"></div>
       </div>
     </section>
 
-    <section class="promise">
-      <div class="shell">
-        <div class="promise-heading">
-          <p class="eyebrow">Cercanía y confianza</p>
-          <h2>Comprar rico también puede ser simple</h2>
-        </div>
-        <div class="promise-grid">
-          <article class="promise-item">
-            <span class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12c2-3.8 4.7-5.7 8.2-5.7 1.9 0 4 .8 6.8 2.7-2 3.8-4.7 5.7-8.2 5.7-1.9 0-4-.8-6.8-2.7ZM4 12l-2 3.2 4.7-.7M12 9.5h.01" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg></span>
-            <h3>Para todos los días</h3>
-            <p>Una opción rica y versátil para resolver tus comidas de forma práctica.</p>
+    <!-- ============================================================
+         6. BENEFICIOS
+         ============================================================ -->
+    <section class="benefits">
+      <div class="container">
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <span class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 2v20M4.9 5.1l14.2 13.8M2 12h20M5 18.5 19 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <div>
+              <h3>Fresco y práctico</h3>
+              <p>Opciones pensadas para resolver tus compras de forma simple.</p>
+            </div>
           </article>
-          <article class="promise-item">
-            <span class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M3 7.5h11v10H3zM14 11h4l3 3v3.5h-7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="7" cy="18" r="1.8" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="18" r="1.8" stroke="currentColor" stroke-width="1.5"/></svg></span>
-            <h3>Menor y mayor</h3>
-            <p>Atendemos consultas para tu hogar, tu emprendimiento o tu comercio.</p>
+
+          <article class="benefit-card">
+            <span class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M3 7.5h11v9H3zM14 11h4l3 3v2.5h-7z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                <circle cx="7" cy="18" r="1.7" stroke="currentColor" stroke-width="1.7"/>
+                <circle cx="18" cy="18" r="1.7" stroke="currentColor" stroke-width="1.7"/>
+              </svg>
+            </span>
+            <div>
+              <h3>Minorista y mayorista</h3>
+              <p>Atención para hogares, emprendimientos y comercios.</p>
+            </div>
           </article>
-          <article class="promise-item">
-            <span class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 11.6a8 8 0 0 1-11.8 7L4 19.7l1.1-4.1A8 8 0 1 1 20 11.6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="m9 11 2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <h3>Trato directo</h3>
-            <p>Escribinos para consultar qué hay disponible y coordinar tu pedido.</p>
+
+          <article class="benefit-card">
+            <span class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M20 11.7a8 8 0 0 1-11.7 7L4 19.8l1.1-4.1A8 8 0 1 1 20 11.7Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                <path d="m8.8 11.9 2.1 2 4.4-4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <div>
+              <h3>Trato directo</h3>
+              <p>Escribinos por WhatsApp y coordinamos tu consulta.</p>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="contact" id="contacto">
-      <div class="shell">
+    <!-- ============================================================
+         7. CONTACTO
+         ============================================================ -->
+    <section class="contact-section" id="contacto">
+      <div class="container">
         <div class="contact-card">
           <div class="contact-copy">
             <p class="eyebrow">Estamos para ayudarte</p>
-            <h2>¿Buscás filet para tu casa o negocio?</h2>
-            <p>Mandanos un mensaje y contanos qué necesitás. Te respondemos por WhatsApp para orientarte sobre la disponibilidad.</p>
-            <a class="button" href="https://wa.me/5492236174870?text=Hola%2C%20quiero%20consultar%20por%20filet%20de%20merluza." target="_blank" rel="noopener noreferrer">
-              Hablemos por WhatsApp
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h2>¿Buscás pescado para tu casa o negocio?</h2>
+            <p>
+              Mandanos un mensaje y contanos qué necesitás.
+              Te respondemos por WhatsApp para orientarte sobre disponibilidad.
+            </p>
+            <a class="primary-button" data-whatsapp-link href="#" target="_blank" rel="noopener noreferrer">
+              Contactar por WhatsApp
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </a>
           </div>
+
+          <div class="contact-decoration" aria-hidden="true"></div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="shell footer-inner">
-      <a class="brand" href="#" aria-label="Pesquera Sergio, inicio">
-        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 14c2.2-4.3 5.4-6.5 9.5-6.5 2.2 0 4.3.8 6.5 2.5-2.2 4.3-5.4 6.5-9.5 6.5-2.2 0-4.3-.8-6.5-2.5Z" stroke="currentColor" stroke-width="1.5"/><path d="m4 14-2 3 5-.7M13 10.5h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span class="brand-name">Pesquera Sergio</span>
+  <!-- ============================================================
+       8. FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand brand-footer" href="#inicio" aria-label="Pesquera Sergio, inicio">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none">
+            <path d="M8 24c5.4-8.6 12.4-12.5 21-12.5 5 0 9.2 1.7 13 5.1-3.1 8.5-10 14.2-19.8 14.2-5.1 0-9.8-2.2-14.2-6.8Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+            <path d="M8 24 2.5 30.5l8.8-1.3M30 20.5h.01" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15 39c5.5-2.8 12-3.4 19.4-1.8M12 34.5c7-3.3 14.8-3.8 22.7-1.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-text">Pesquera<br>Sergio</span>
       </a>
-      <p class="footer-note">Filet de merluza · Venta minorista y mayorista</p>
+
+      <p>Productos del mar · Venta minorista y mayorista</p>
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/5492236174870?text=Hola%2C%20quiero%20hacer%20una%20consulta%20por%20filet%20de%20merluza." target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp">
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11.6a8 8 0 0 1-11.8 7L4 19.7l1.1-4.1A8 8 0 1 1 20 11.6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8.5c.2-.5.5-.5.8-.5h.4c.2 0 .3.1.4.4l.6 1.5c.1.2.1.4-.1.6l-.5.6c-.2.2-.2.4 0 .6.5.8 1.2 1.5 2 1.9.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.5.7c.2.1.3.2.3.4 0 .3-.1 1-.5 1.3-.4.4-1 .6-1.6.6s-1.8-.4-3.1-1.5c-1.5-1.3-2.5-3.1-2.6-3.8-.1-.7 0-1.3.5-1.8Z" fill="currentColor"/></svg>
+  <!-- ============================================================
+       9. BOTÓN FLOTANTE WHATSAPP
+       ============================================================ -->
+  <a class="whatsapp-float" data-whatsapp-link href="#" target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M20 11.7a8 8 0 0 1-11.7 7L4 19.8l1.1-4.1A8 8 0 1 1 20 11.7Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+      <path d="M9 8.6c.2-.5.5-.5.8-.5h.4c.2 0 .3.1.4.4l.6 1.5c.1.2.1.4-.1.6l-.5.6c-.2.2-.2.4 0 .6.5.8 1.2 1.5 2 1.9.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.5.7c.2.1.3.2.3.4 0 .3-.1 1-.5 1.3-.4.4-1 .6-1.6.6s-1.8-.4-3.1-1.5c-1.5-1.3-2.5-3.1-2.6-3.8-.1-.7 0-1.3.5-1.8Z" fill="currentColor"/>
+    </svg>
   </a>
 
-  <script>
-    (() => {
-      const ASSETS = {
-        filet: "WhatsApp%20Image%202026-10-01%20at%2016.05.09.jpeg",
-        caja: "WhatsApp%20Image%202026-10-01%20at%2016.05.10%20%281%29.jpeg",
-        pescado: "WhatsApp%20Image%202026-10-01%20at%2016.05.10.jpeg"
-      };
-      const DEFAULT_PRODUCTS = [
-        { id: "filet", name: "Filet de merluza", description: "Filet listo para disfrutar en casa o sumar a tu negocio. Venta minorista y mayorista.", type: "Menor y mayor", image: ASSETS.filet },
-        { id: "caja", name: "Filet de merluza por caja", description: "Presentación en caja para tu hogar, comercio o emprendimiento. Venta minorista y mayorista.", type: "Menor y mayor", image: ASSETS.caja },
-        { id: "pescado", name: "Pescado entero", description: "Consultanos por opciones para compra minorista y mayorista y la disponibilidad del día.", type: "Menor y mayor", image: ASSETS.pescado }
-      ];
-      const grid = document.getElementById("product-grid");
-
-      function makeSvgArrow() {
-        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        svg.setAttribute("viewBox", "0 0 24 24");
-        svg.setAttribute("fill", "none");
-        svg.setAttribute("aria-hidden", "true");
-        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-        path.setAttribute("d", "M5 12h14m-6-6 6 6-6 6");
-        path.setAttribute("stroke", "currentColor");
-        path.setAttribute("stroke-width", "1.7");
-        path.setAttribute("stroke-linecap", "round");
-        path.setAttribute("stroke-linejoin", "round");
-        svg.append(path);
-        return svg;
-      }
-
-      function renderProducts() {
-        grid.replaceChildren();
-        for (const product of DEFAULT_PRODUCTS) {
-          const card = document.createElement("article");
-          card.className = "product-card";
-          const imageWrap = document.createElement("div");
-          imageWrap.className = "product-image-wrap";
-          const image = document.createElement("img");
-          image.className = "product-image";
-          image.src = product.image;
-          image.alt = product.name;
-          image.loading = "lazy";
-          const tag = document.createElement("span");
-          tag.className = "product-tag";
-          tag.textContent = product.type;
-          imageWrap.append(image, tag);
-          const info = document.createElement("div");
-          info.className = "product-info";
-          const title = document.createElement("h3");
-          title.textContent = product.name;
-          const description = document.createElement("p");
-          description.textContent = product.description;
-          const link = document.createElement("a");
-          link.className = "product-link";
-          link.href = "https://wa.me/5492236174870?text=" + encodeURIComponent("Hola, quiero consultar por " + product.name + ".");
-          link.target = "_blank";
-          link.rel = "noopener noreferrer";
-          link.append(document.createTextNode("Consultar por WhatsApp"), makeSvgArrow());
-          info.append(title, description, link);
-          card.append(imageWrap, info);
-          grid.append(card);
-        }
-      }
-
-      renderProducts();
-    })();
-  </script>
+  <!-- ============================================================
+       10. JAVASCRIPT
+       ============================================================ -->
+  <script src="productos.js" defer></script>
 </body>
 </html>
