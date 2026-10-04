@@ -95,7 +95,7 @@
     },
     {
       id: "merluza de cola",
-      nombre: "merluza de cola entera",
+      nombre: "Robalo",
       descripcion: "consulta por opciones para minorista y mayorista y la disponibilidad del día.",
       etiqueta: "Menor y mayor",
       imagen: IMAGENES.merluzaDeCola
